@@ -189,64 +189,65 @@ if predict_btn:
 # -------------------------------------------------
 # WASTE DESCRIPTION & DISPOSAL
 # -------------------------------------------------
-if predicted_class:
-       st.markdown("---")
+
+st.markdown("---")
 st.subheader("📝 Waste Description")
-if predicted_class.lower() == "infectious":
-        st.error("""
+
+if predicted_class == "infectious":
+
+    st.error("""
 ### 🔴 Infectious Biomedical Waste
 
-Infectious biomedical waste contains materials contaminated
-with blood, body fluids, microorganisms, or infectious agents.
+Infectious biomedical waste contains materials contaminated with blood,
+body fluids, microorganisms, bacteria, viruses, or other infectious agents.
+These wastes can spread diseases if they are not handled properly.
 
-Examples:
-✔ Gloves
-✔ Masks
-✔ Cotton
-✔ Gauze
-✔ Bandages
+#### Common Examples
+- Used Gloves
+- Face Masks
+- Cotton
+- Gauze
+- Bandages
+- Syringes (without needles)
+- Blood-stained materials
+- Dressings
 
-These wastes should be handled carefully to prevent infection.
+#### Health Risks
+- Spread of infectious diseases
+- Cross-contamination
+- Environmental pollution
+- Risk to healthcare workers
+
+#### Disposal Method
+🟡 Dispose in the **Yellow Biomedical Waste Bin** according to
+Biomedical Waste Management Rules.
 """)
+
 else:
-        st.success("""
-### 🟢 General Waste
 
-General biomedical waste is non-infectious and
-does not contain harmful microorganisms.
+    st.success("""
+### 🟢 General Biomedical Waste
 
-Examples:
-✔ Plastic
-✔ Paper
-✔ Glass
-✔ Metal
-✔ Food Waste
+General biomedical waste is non-infectious waste that does not contain
+harmful microorganisms or hazardous biological materials.
 
-These materials can be disposed of through normal waste
-management procedures.
-""")
+#### Common Examples
+- Paper
+- Plastic Covers
+- Food Waste
+- Packaging Materials
+- Glass Bottles
+- Cardboard
+- Clean Plastic Containers
 
-    # -------------------------------------------------------
-    # Disposal Instructions
-    # -------------------------------------------------------
-st.markdown("---")
-st.subheader("🗑 Disposal Instructions")
-if predicted_class.lower() == "infectious":
-        st.warning("""
-🟡 Dispose in the **Yellow Biomedical Waste Bin**
+#### Health Risks
+- Low risk to humans
+- Safe when segregated properly
+- Recyclable in many cases
 
-✔ Wear gloves
-✔ Seal the waste bag properly
-✔ Do not mix with general waste
-✔ Follow Biomedical Waste Management Rules
-""")
-else:
-        st.info("""
-🟢 Dispose in the **General Waste Bin**
-
-✔ Segregate recyclable materials
-✔ Dispose according to municipal waste rules
-✔ Keep infectious waste separate
+#### Disposal Method
+🟢 Dispose in the **General Waste Bin** and follow local municipal
+waste management guidelines.
 """)
 
     # -------------------------------------------------------
@@ -300,6 +301,9 @@ if st.button("Generate PDF Report"):
             file_name="prediction_history.csv",
             mime="text/csv"
         )
+
+
+
 
 
 
