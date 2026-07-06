@@ -264,30 +264,6 @@ st.success("""
 ✔ Use PPE whenever necessary.
 """)
 
-    # -------------------------------------------------------
-    # PDF Report
-    # -------------------------------------------------------
-st.markdown("---")
-st.subheader("📄 Download Prediction Report")
-if st.button("Generate PDF Report"):
-        pdf_path = "Biomedical_Report.pdf"
-        doc = SimpleDocTemplate(pdf_path)
-        styles = getSampleStyleSheet()
-        elements = []
-        elements.append(Paragraph("<b>Biomedical Waste Prediction Report</b>", styles["Title"]))
-        elements.append(Paragraph(f"Prediction : {predicted_class}", styles["BodyText"]))
-        elements.append(Paragraph(f"Confidence : {confidence:.2f}%", styles["BodyText"]))
-        elements.append(Paragraph(f"Date : {datetime.now()}", styles["BodyText"]))
-        doc.build(elements)
-
-        with open(pdf_path, "rb") as pdf:
-            st.download_button(
-                "⬇ Download PDF",
-                pdf,
-                file_name="Biomedical_Report.pdf",
-                mime="application/pdf"
-            )
-
 # -------------------------------------------------
 # Download Prediction History
 # ------------------------------------------------
