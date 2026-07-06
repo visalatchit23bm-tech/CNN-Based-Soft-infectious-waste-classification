@@ -92,13 +92,13 @@ Biomedical_Waste_App/
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Biomedical-Waste-Classification.git
+git clone https:https://github.com/visalatchit23bm-tech/CNN-Based-Soft-infectious-waste-classification
 ```
 
 Move to the project folder:
 
 ```bash
-cd Biomedical-Waste-Classification
+cd CNN Based soft infectious waste classification
 ```
 
 Install the required libraries:
