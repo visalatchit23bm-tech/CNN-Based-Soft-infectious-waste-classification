@@ -1,7 +1,9 @@
-tensorflow
 streamlit
+tensorflow
 numpy
-pillow
-opencv-python
+pandas
 matplotlib
-scikit-learn
+Pillow
+opencv-python-headless
+reportlab
+qrcode
