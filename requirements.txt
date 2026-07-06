@@ -8,4 +8,5 @@ opencv-python-headless==4.10.0.84
 reportlab==4.2.2
 h5py==3.11.0
 protobuf==4.25.3
+qrcode==7.4.2
 
