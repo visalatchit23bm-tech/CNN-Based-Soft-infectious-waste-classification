@@ -3,7 +3,7 @@ from tensorflow.keras.models import load_model
 from PIL import Image
 
 # Load the trained model
-model = load_model("Model/mobilenetv2_waste_model.h5")
+model = load_model("mobilenetv2_waste_model.h5")
 
 # Load class names from text file
 with open("class_names.txt") as f:
